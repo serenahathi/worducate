@@ -1,26 +1,14 @@
 let express = require('express');
 let router = express.Router();
-let request = require("superagent");
+let superagent = require("superagent");
+let apiKey = "9da31cd4c5408dfe55c830266d80de19c98830e1da9f24313"
+let request = require("request");
 
+router.get('/', function(req, res) {
+  res.render('index')
+  request("https://api.wordnik.com/v4/words.json/wordOfTheDay?api_key=" + apiKey, function(err, res, body) {
+  console.log(body.id);
+});
+});
 
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
-
-let getUserFollowers = function(username, callback) {
-  request
-    .get(`https://api.github.com/users/${username}/followers`)
-    .end(function(err, res) {
-      if (!err) {
-        let users = res.body.map(function(user) {
-          return user.login;
-        });
-        callback(null, users);
-      } else {
-        callback("Error occured!");
-      }
-    });
-};
-module.exports.getUserFollowers = getUserFollowers;
-// module.exports = router;
+module.exports = router;

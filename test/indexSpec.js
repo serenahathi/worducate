@@ -6,12 +6,12 @@ let response = require("./response");
 describe("GET followers", function(){
 
   beforeEach(function() {
-    nock('https://api.github.com')
-    .get("/users/octocat/followers")
+    nock('https://api.wordnik.com')
+    .get("v4/words.json/wordOfTheDay?date=2018-06-12&api_key=YOURAPIKEY")
     .reply(200,response);
   });
 
-  it("returns user followers", function(done){
+  it("returns an object containing a word of the day", function(done){
     this.timeout(3000)
     // if the test takes longer than 3 scnds it will fail
     

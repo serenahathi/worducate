@@ -10,6 +10,7 @@ router.get('/', function (req, res) {
     let word = result.word;
     let firstDefinition = result.definitions[0].text;
     let secondDefinition = result.definitions[1].text;
+    let example = result.examples[0].text;
   });
 });
 

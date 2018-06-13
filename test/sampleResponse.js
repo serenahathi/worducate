@@ -15,4 +15,4 @@ module.exports = {
     "text": "adjective, skillful in any or every kind of work.",
     "source": "wordnik"
   }]
-}
+};

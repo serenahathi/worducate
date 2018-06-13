@@ -5,6 +5,7 @@ let request = require("request");
 
 router.get('/', function (req, res) {
   res.render('index')
+  // should I wrap the request in a function -
   request("https://api.wordnik.com/v4/words.json/wordOfTheDay?api_key=" + process.env.API_KEY, function (err, res, body) {
     let result = JSON.parse(body);
     let word = result.word;

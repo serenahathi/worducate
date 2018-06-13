@@ -3,12 +3,30 @@
 
 <head>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+
 </head>
 
 <body>
   <h1>Worducate</h1>
-  <h1>The word of the day is:</h1>
-  <%=word%>
+  <h1>
+    <%=word%>
+  </h1>
+  <p>
+    Definition:
+    <%=firstDefinition%>
+  </p>
+  <p>
+    Usage:
+    <%=example%>
+  </p>
+
+  <a id="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet?text=Hey there, I'm using Worducate and today's WOTD is: <%=word%>">
+    <i class="fab fa-twitter"></i>
+  </a>
+
 </body>
+
 
 </html>

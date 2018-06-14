@@ -21,7 +21,8 @@ const WordSchema = new Schema({
     default: "API"
   },
   favourite: {
-    type: Boolean
+    type: Boolean,
+    default: false
   }
 });
 

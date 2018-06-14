@@ -27,13 +27,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-mongoose.connect('mongodb://localhost/worducate', function (err, db) {
-  console.log("Successfully connected to server")
-  db.close();
-});
-
-
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({

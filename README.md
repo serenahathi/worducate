@@ -44,7 +44,7 @@ So that I can enrich my vocabulary,
 I would like to be presented with a new word every day
 ```
 ```
-[x]As a user,
+As a user,
 So that I can understand the meaning of new words,
 I would like to be presented with a definition of the word alongside a sentence that correctly uses the word
 ```

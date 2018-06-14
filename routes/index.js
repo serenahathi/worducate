@@ -11,10 +11,12 @@ router.get('/', function (req, res) {
     res.render('index', wordOfTheDay);
   });
 
-  Word.findById({
-
+  Word.create({
+    word: wordOfTheDay.word,
+    createdAt: new Date(),
+    definition: wordOfTheDay.firstDefinition,
+    usage: wordOfTheDay.example
   });
-
 });
 
 module.exports = router;

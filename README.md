@@ -44,12 +44,14 @@ So that I can enrich my vocabulary,
 I would like to be presented with a new word every day
 ```
 ```
-As a user,
+[x]As a user,
 So that I can understand the meaning of new words,
 I would like to be presented with a definition of the word alongside a sentence that correctly uses the word
 ```
 ```
 As a user,
 So that I can share interesting new English words,
-I would like to be able to send the new word to my friends via Email or Facebook/Twitter
+I would like to be able to send the new word to my friends via Twitter
 ```
+
+V1

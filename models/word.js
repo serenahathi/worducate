@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const WordSchema = new Schema({
+const WordSchema = new mongoose.Schema({
   word: {
     type: String,
     required: true
@@ -27,3 +27,4 @@ const WordSchema = new Schema({
 });
 
 module.exports = mongoose.model("Word", WordSchema);
+// Creates the word model and exports it so index.js can access it

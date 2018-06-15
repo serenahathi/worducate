@@ -1,6 +1,6 @@
 let request = require("request");
 
-function wordOfTheDay(callback) {
+function getWord(callback) {
   request("https://api.wordnik.com/v4/words.json/wordOfTheDay?api_key=" + process.env.API_KEY, function (err, res, body) {
     let result = JSON.parse(body);
     let wordOfTheDay = {
@@ -13,4 +13,4 @@ function wordOfTheDay(callback) {
   });
 };
 
-module.exports = wordOfTheDay;
+module.exports = getWord;

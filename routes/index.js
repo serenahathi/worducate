@@ -2,21 +2,24 @@ let express = require('express');
 let router = express.Router();
 let superagent = require("superagent");
 let request = require("request");
-let wordOfTheDay = require("../helpers/wordnik");
-var Word = require('..//models/word');
-
+let getWord = require("../helpers/wordnik");
+let Word = require('..//models/word');
 
 router.get('/', function (req, res) {
-  wordOfTheDay(function (wordOfTheDay) {
-    res.render('index', wordOfTheDay);
-  });
+  getWord(function (getWord) {
+    res.render('index', getWord);
+    let Wotd = new Word({
+      word: getWord.word,
+      createdAt: new Date(),
+      definition: getWord.firstDefinition,
+      usage: getWord.example,
+    });
 
-  Word.create({
-    word: wordOfTheDay.word,
-    createdAt: new Date(),
-    definition: wordOfTheDay.firstDefinition,
-    usage: wordOfTheDay.example
+    Wotd.save(function (err) {
+      if (err) return handleError(err);
+    });
+
+
   });
 });
-
 module.exports = router;

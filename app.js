@@ -3,7 +3,7 @@ var express = require('express');
 var mongoose = require("mongoose");
 var passport = require("passport");
 var flash = require("flash");
-var configDB = require("./config/database.js");
+var db = require("./config/database.js");
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require("body-parser");
@@ -16,6 +16,10 @@ var session = require("express-session");
 
 var app = express();
 require("dotenv").config();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

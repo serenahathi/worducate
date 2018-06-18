@@ -32,7 +32,3 @@ let Word = module.exports = mongoose.model("Word", WordSchema);
 module.exports.getWords = function (callback) {
   Word.find(callback);
 }
-
-module.exports.addWord = function (word) {
-  Word.create(word);
-};

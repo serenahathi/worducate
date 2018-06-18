@@ -1,9 +1,7 @@
-let express = require('express');
+let express = require("express");
 let router = express.Router();
-let superagent = require("superagent");
-let request = require("request");
 let getWord = require("../helpers/wordnik");
-let Word = require('..//models/word');
+let Word = require("../models/word");
 
 router.get("/", function (req, res) {
   getWord(function (getWord) {

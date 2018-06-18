@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8"> 
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,18 +14,24 @@
 
 <body>
   <div class="container">
-      <%= new Date().toDateString() %>
-    <h1>Worducate</h1>
-    <div class="content">
-  <h2><%=word%></h2>
-  <p>Definition:<%=firstDefinition%></p>
-  <p>Usage:<%=example%></p>
-
-  <a href="https://twitter.com/intent/tweet?text=Hey there I'm using Worducate and today's WOTD is: <%=word%> //"
-  data-url="http://worducate.com" class="twitter-share-button" data-show-count="false">Tweet</a>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
-  <div class="footer navbar-fixed-bottom">Made with &hearts; in Berlin</div>
-</div>
+    <%= new Date().toDateString() %>
+      <h1>Worducate</h1>
+      <div class="content">
+        <h2>
+          <%=word%>
+        </h2>
+        <p>Definition:
+          <%=firstDefinition%>
+        </p>
+        <p>Usage:
+          <%=example%>
+        </p>
+        <a href="https://twitter.com/intent/tweet?text=Hey there I'm using Worducate and today's WOTD is: <%=word%> //" data-url="http://worducate.com"
+          class="twitter-share-button" data-show-count="false">Tweet</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+      <div class="footer navbar-fixed-bottom">Made with &hearts; in Berlin</div>
+  </div>
 </body>
+
 </html>

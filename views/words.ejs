@@ -13,24 +13,22 @@
 </head>
 
 <body>
+  <h1>All words</h1>
   <div class="container">
-    <%= new Date().toDateString() %>
-      <br>
+    <br>
+    <% for(let i = 0; i < words.length; i++) {%>
       <div class="content">
-        <% for(let i = 0; i < words.length; i++) {%>
-          <class="sub-heading">Word:
-            <%= words[i].word%>
-              <br>
-              <class="sub-heading">Definition:
-                <%= words[i].definition %>
-                  <br>
-                  <class="sub-heading">Usage:
-                    <%= words[i].usage%>
-                      <br>
-                      <%}%>
-                        <br>
+        <class="sub-heading">Word:
+          <%= words[i].word%>
+            <br>
+            <class="sub-heading">Definition:
+              <%= words[i].definition %>
+                <br>
+                <class="sub-heading">Usage:
+                  <%= words[i].usage%>
       </div>
-      <div class="footer navbar-fixed-bottom">Made with &hearts; in Berlin</div>
+      <%}%>
+        <div class="footer navbar-fixed-bottom">Made with &hearts; in Berlin</div>
   </div>
 </body>
 

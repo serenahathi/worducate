@@ -11,6 +11,6 @@ function getWord(callback) {
     };
     callback(wordOfTheDay);
   });
-};
+}
 
 module.exports = getWord;

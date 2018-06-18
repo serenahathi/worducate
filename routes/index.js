@@ -18,18 +18,14 @@ router.get("/", function (req, res) {
   });
 });
 
-// Renders words
 router.get("/words", function (req, res) {
   Word.getWords(function (err, words) {
     if (err) {
       throw err;
     }
-    // res.json(words[0].definition);
-    // res.json(words);
     res.render("words", {
       words
     });
-    console.log(words.length);
   });
 });
 

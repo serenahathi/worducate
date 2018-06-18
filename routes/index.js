@@ -27,4 +27,13 @@ router.get("/words", function (req, res) {
   });
 });
 
+router.get("/words/new", function (req, res) {
+  res.render("new");
+});
+
+router.post("/words", function (req, res) {
+  res.redirect("/words");
+})
+
+
 module.exports = router;

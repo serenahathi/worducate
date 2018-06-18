@@ -43,13 +43,43 @@ As a user,
 So that I can enrich my vocabulary,
 I would like to be presented with a new word every day
 ```
+
 ```
 As a user,
 So that I can understand the meaning of new words,
-I would like to be presented with a definition of the word alongside a sentence that correctly uses the word
+I would like to be see a definition of the word alongside a sentence that correctly uses the word
 ```
+
 ```
 As a user,
 So that I can share interesting new English words,
-I would like to be able to send the new word to my friends via Email or Facebook/Twitter
+I would like to be able to send the new word to my friends via Twitter
+```
+
+V1
+
+```
+As a user,
+So that I can retrieve all of the words I have learnt,
+I would like to view all the words that I have been shown so far
+```
+
+```
+As a user,
+So that I can retrieve the words that I particularly like,
+I would like to be able to mark a word as a favourite and view all my favourite words
+```
+
+V2
+
+```
+As a user,
+So that I can keep track of vocabulary I have learnt using other resources,
+I would like to add a new word to the list & assign a category
+```
+
+```
+As a user,
+So that I can correctly add a new word to the list,
+I would like to be able to edit my entry in case I make a mistake
 ```

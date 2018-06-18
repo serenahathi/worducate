@@ -32,8 +32,14 @@ router.get("/words/new", function (req, res) {
 });
 
 router.post("/words", function (req, res) {
+  Word.create({
+    word: req.body.newword,
+    createdAt: new Date(),
+    definition: req.body.definition,
+    usage: req.body.usage,
+    status: "User"
+  });
   res.redirect("/words");
-})
-
+});
 
 module.exports = router;

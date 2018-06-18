@@ -7,19 +7,26 @@ let Word = require('..//models/word');
 
 router.get('/', function (req, res) {
   getWord(function (getWord) {
-    res.render('index', getWord);
     let Wotd = new Word({
       word: getWord.word,
       createdAt: new Date(),
       definition: getWord.firstDefinition,
       usage: getWord.example,
     });
-
-    Wotd.save(function (err) {
-      if (err) return handleError(err);
-    });
-
-
+    res.render('index', getWord);
+    Word.addWord(Wotd)
   });
 });
+
+// Renders words
+router.get("/words", function (req, res) {
+  Word.getWords(function (err, words) {
+    if (err) {
+      throw err;
+    }
+    // res.json(words[0].definition);
+    res.json(words);
+  });
+});
+
 module.exports = router;

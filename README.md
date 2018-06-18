@@ -1,19 +1,22 @@
  # Worducate
 
-## Summary
+[Summary](#summary) | [Prerequisites](#pre-reqs) | [Quickstart](#quickstart) | [Tests](#tests) | [Specification](#spec) | [User Stories] (#user-stories)
 
+## Summary
+<a id="summary"></a>
 A web application that aims to help enrich the vocabulary of those learning English by:
 - Presenting users with a new word each day along with its definition, usage and audio
 - Functioning as a vocabulary tracking tool, allowing users to add new words they have learnt from other sources to build up a bank of vocabulary
 
-## Prerequisites
 
+## Prerequisites
+<a id="pre-reqs"></a>
 - Ensure you have [Node](https://nodejs.org/en/download/) and [MongoDB](https://docs.mongodb.com/manual/installation/) installed
 
 - Create an account with [WordNik](https://developer.wordnik.com/) to retrieve an API key
 
 ## Quickstart
-
+<a id="quickstart"></a>
 - Clone the repository by running the following command in your terminal:
 
 ```
@@ -42,6 +45,7 @@ $ mongod
 
 
 ## Tests
+<a id="tests"></a>
 
 Run the following command in the root of the project directory:
 
@@ -50,8 +54,10 @@ $ npm test
 ```
 
 ## Specification
+<a id="spec"></a>
 
 ## User Stories
+<a id="user-stories"></a>
 
 MVP
 ```

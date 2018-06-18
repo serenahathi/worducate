@@ -1,10 +1,16 @@
-# Worducate
+ # Worducate
 
 ## Summary
 
 A web application that aims to help enrich the vocabulary of those learning English by:
 - Presenting users with a new word each day along with its definition, usage and audio
 - Functioning as a vocabulary tracking tool, allowing users to add new words they have learnt from other sources to build up a bank of vocabulary
+
+## Prerequisites
+
+- Ensure you have [Node](https://nodejs.org/en/download/) and [MongoDB](https://docs.mongodb.com/manual/installation/) installed
+
+- Create an account with [WordNik](https://developer.wordnik.com/) to retrieve an API key
 
 ## Quickstart
 
@@ -14,16 +20,26 @@ A web application that aims to help enrich the vocabulary of those learning Engl
 $ git clone https://github.com/serenahathi/worducate.git
 ```
 
+- Create a ```.env``` file in the root of the project directory and add your API key to the file as follows:
+
+
+```
+API_KEY="yourKey"
+```
+
 - Navigate to the root of the project directory and install dependencies by running:
 
 ```
 $ npm install
 ```
 
-- Start the server by running the command below and navigate to http://localhost:3000/
+- Run mongod in the terminal
 ```
-$ npm start
+$ mongod
 ```
+
+- In a new terminal window, start the server by running ```npm start``` and navigate to http://localhost:3000/
+
 
 ## Tests
 

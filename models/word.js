@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const WordSchema = new mongoose.Schema({
   word: {
     type: String,
+    unique: true,
     required: true
   },
   createdAt: {

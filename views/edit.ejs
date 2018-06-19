@@ -14,15 +14,15 @@
 
 <body>
   <h1>Edit a word</h1>
-  <form action="/words/<%= words._id %>" method="post">
+  <form action="/words/<%=words._id%>" method="post">
     <br>
-    <input type="text" name="newword" value="<%=words.word%>" placeholder="<%=words.word%>" size="100">
-    <br>
-    <br>
-    <input type="text" name="definition" placeholder="<%=words.definition%>" size="100">
+    <input type="text" name="newword" value="<%=words.word%>" size="100">
     <br>
     <br>
-    <input type="text" name="usage" placeholder="<%=words.usage%>" size="100">
+    <input type="text" name="definition" value="<%=words.definition%>" size="100">
+    <br>
+    <br>
+    <input type="text" name="usage" value="<%=words.usage%>" size="100">
     <br>
     <br>
     <input type="Submit" value="Confirm">

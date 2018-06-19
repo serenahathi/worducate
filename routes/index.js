@@ -60,8 +60,22 @@ router.get("/words/:id/edit", function (req, res) {
 });
 
 // Edit word
-router.put("/words/:_id/", function (req, res) {
-
+router.post("/words/:id", function (req, res) {
+  let id = req.params.id;
+  let words = {
+    word: req.body.newword,
+    createdAt: new Date(),
+    definition: req.body.definition,
+    usage: req.body.usage,
+  };
+  Word.findByIdAndUpdate(id, words, {
+    new: true
+  }, function (err) {
+    if (err) {
+      throw err;
+    }
+  });
+  res.redirect("/words");
 });
 
 module.exports = router;

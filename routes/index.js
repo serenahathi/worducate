@@ -3,6 +3,7 @@ let router = express.Router();
 let getWord = require("../helpers/wordnik");
 let Word = require("../models/word");
 
+// Retrieve and render WOTD
 router.get("/", function (req, res) {
   getWord(function (getWord) {
     let Wotd = new Word({
@@ -16,6 +17,7 @@ router.get("/", function (req, res) {
   });
 });
 
+// Show all words
 router.get("/words", function (req, res) {
   Word.getWords(function (err, words) {
     if (err) {
@@ -27,10 +29,7 @@ router.get("/words", function (req, res) {
   });
 });
 
-router.get("/words/new", function (req, res) {
-  res.render("new");
-});
-
+// Add new word
 router.post("/words", function (req, res) {
   Word.create({
     word: req.body.newword,
@@ -40,6 +39,29 @@ router.post("/words", function (req, res) {
     status: "User"
   });
   res.redirect("/words");
+});
+
+// Show form to add new word
+router.get("/words/new", function (req, res) {
+  res.render("new");
+});
+
+// Show form to edit word
+router.get("/words/:id/edit", function (req, res) {
+  let id = req.params.id;
+  Word.findById(id, function (err, words) {
+    if (err) {
+      throw err;
+    }
+    res.render("edit", {
+      words
+    });
+  });
+});
+
+// Edit word
+router.put("/words/:_id/", function (req, res) {
+
 });
 
 module.exports = router;

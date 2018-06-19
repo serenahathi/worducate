@@ -49,3 +49,8 @@ a {
   font-style: italic;
   font-weight: bold;
 }
+
+#edit-pencil {
+  position: relative;
+  float: right;
+}

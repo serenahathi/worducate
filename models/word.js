@@ -31,15 +31,3 @@ let Word = module.exports = mongoose.model("Word", WordSchema);
 module.exports.getWords = function (callback) {
   Word.find(callback);
 };
-
-module.exports.updateWord = function (id, word, callback) {
-  let query = {
-    _id: id
-  };
-  let update = {
-    word: word.name,
-    definition: word.definition,
-    usage: word.usage
-  }
-  Word.findByIdAndUpdate(query, update, callback);
-};

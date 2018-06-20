@@ -6,7 +6,6 @@ const userSchema = new Schema({
   local: {
     email: String,
     password: String,
-    required: true  
   }
 });
 

@@ -2,6 +2,8 @@ let express = require("express");
 let router = express.Router();
 let getWord = require("../helpers/wordnik");
 let Word = require("../models/word");
+let passport = require('passport');
+require("../config/passport");
 
 // Retrieve and render WOTD
 router.get("/", function (req, res) {
@@ -102,7 +104,7 @@ router.post("/words/favourites", function (req, res) {
 
 // Sign up form
 router.get("/signup", function (req, res) {
-  res.render("signup");
+  res.render("signup", { message: req.flash("signupMessage")});
 });
 
 router.post("/signup", function (req, res) {
@@ -110,13 +112,16 @@ router.post("/signup", function (req, res) {
 
 // Log in form
 router.get("/login", function (req, res) {
-  res.render("login");
+  res.render("login", {message: req.flash("loginMessage")});
 });
 
 router.post("/login", function (req, res) {
 });
 
-
-
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated())
+  return next;
+  res.redirect("/")
+}
 
 module.exports = router;

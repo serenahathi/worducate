@@ -15,13 +15,13 @@
 <body>
   <h1>Edit a word</h1>
   <form action="/words/<%=words._id%>" method="post">
-    <br>
+    <br><label>Edit the word</label><br>
     <input type="text" name="newword" value="<%=words.word%>" size="100">
     <br>
-    <br>
+    <br><label>Edit the definition</label><br>
     <input type="text" name="definition" value="<%=words.definition%>" size="100">
     <br>
-    <br>
+    <br><label>Edit the sentence</label><br>
     <input type="text" name="usage" value="<%=words.usage%>" size="100">
     <br>
     <br>

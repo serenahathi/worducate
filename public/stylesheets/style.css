@@ -54,3 +54,16 @@ a {
   position: relative;
   float: right;
 }
+
+label {
+color: #446CB3; 
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+input {
+  background: white;
+  padding: 5px;
+}

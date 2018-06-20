@@ -118,8 +118,11 @@ router.get("/login", function (req, res) {
   res.render("login", {message: req.flash("loginMessage")});
 });
 
-router.post("/login", function (req, res) {
-});
+router.post("/login", passport.authenticate("local-login", {
+  successRedirect: "/",
+  failureRedirect: "/login",
+  failureFlash: true
+}));
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated())

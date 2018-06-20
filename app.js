@@ -1,20 +1,21 @@
 const createError = require("http-errors");
 const express = require("express");
+const app = express();
 const mongoose = require("mongoose");
 const passport = require("passport");
-const flash = require("flash");
-const db = require("./config/database.js");
+const flash = require("connect-flash");
+const configDB = require("./config/database.js");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-const logger = require("morgan");
+const morgan = require("morgan");
 const indexRouter = require("./routes/routes");
 const session = require("express-session");
 
 // require("./config/passport")(passport);
 
-const app = express();
 require("dotenv").config();
+app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
@@ -30,7 +31,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({
   extended: false
@@ -56,6 +56,11 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-
+app.use(session({secret: "thisisatest"}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+app.use(require("./routes/routes"));
+// require("./routes/routes.js")(app, passport);
 
 module.exports = app;

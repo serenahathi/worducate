@@ -100,6 +100,22 @@ router.post("/words/favourites", function (req, res) {
   res.redirect("/words");
 });
 
+// Sign up form
+router.get("/signup", function (req, res) {
+  res.render("signup");
+});
+
+router.post("/signup", function (req, res) {
+});
+
+// Log in form
+router.get("/login", function (req, res) {
+  res.render("login");
+});
+
+router.post("/login", function (req, res) {
+});
+
 
 
 

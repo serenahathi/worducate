@@ -3,7 +3,7 @@ let router = express.Router();
 let getWord = require("../helpers/wordnik");
 let Word = require("../models/word");
 let passport = require('passport');
-require("../config/passport");
+require("../config/passport")(passport);
 
 // Retrieve and render WOTD
 router.get("/", function (req, res) {
@@ -108,7 +108,7 @@ router.get("/signup", function (req, res) {
 });
 
 router.post("/signup", passport.authenticate("local-signup", {
-  sucessRedirect: "/words",
+  successRedirect: "/words",
   failureRedirect: "/signup",
   failureFlash: true
 }));

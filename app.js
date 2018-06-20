@@ -12,7 +12,7 @@ const morgan = require("morgan");
 const indexRouter = require("./routes/routes");
 const session = require("express-session");
 
-// require("./config/passport")(passport);
+require("./config/passport")(passport);
 
 require("dotenv").config();
 app.use(morgan("dev"));

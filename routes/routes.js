@@ -107,8 +107,11 @@ router.get("/signup", function (req, res) {
   res.render("signup", { message: req.flash("signupMessage")});
 });
 
-router.post("/signup", function (req, res) {
-});
+router.post("/signup", passport.authenticate("local-signup", {
+  sucessRedirect: "/words",
+  failureRedirect: "/signup",
+  failureFlash: true
+}));
 
 // Log in form
 router.get("/login", function (req, res) {

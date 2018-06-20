@@ -20,7 +20,7 @@ router.get("/", function (req, res) {
 });
 
 // Show all words
-router.get("/words", function (req, res) {
+router.get("/words", isLoggedIn, function (req, res) {
   Word.getWords(function (err, words) {
     if (err) {
       throw err;
@@ -32,7 +32,7 @@ router.get("/words", function (req, res) {
 });
 
 // Add new word
-router.post("/words", function (req, res) {
+router.post("/words", isLoggedIn, function (req, res) {
   Word.create({
     word: req.body.newword,
     createdAt: new Date(),
@@ -44,12 +44,12 @@ router.post("/words", function (req, res) {
 });
 
 // Show form to add new word
-router.get("/words/new", function (req, res) {
+router.get("/words/new", isLoggedIn, function (req, res) {
   res.render("new");
 });
 
 // Show form to edit word
-router.get("/words/:id/edit", function (req, res) {
+router.get("/words/:id/edit", isLoggedIn, function (req, res) {
   let id = req.params.id;
   Word.findById(id, function (err, words) {
     if (err) {
@@ -62,7 +62,7 @@ router.get("/words/:id/edit", function (req, res) {
 });
 
 // Edit word
-router.post("/words/:id", function (req, res) {
+router.post("/words/:id", isLoggedIn, function (req, res) {
   let id = req.params.id;
   let words = {
     word: req.body.newword,
@@ -81,7 +81,7 @@ router.post("/words/:id", function (req, res) {
 });
 
 
-router.post("/words/favourites", function (req, res) {
+router.post("/words/favourites", isLoggedIn, function (req, res) {
   let id = req.params.id;
   let words = {
     word: req.body.newword,

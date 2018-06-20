@@ -78,4 +78,29 @@ router.post("/words/:id", function (req, res) {
   res.redirect("/words");
 });
 
+
+router.post("/words/favourites", function (req, res) {
+  let id = req.params.id;
+  let words = {
+    word: req.body.newword,
+    createdAt: new Date(),
+    definition: req.body.definition,
+    usage: req.body.usage,
+  };
+  Word.findByIdAndUpdate(id, words, {
+    new: true
+  }, function (err) {
+    if (err) {
+      throw err;
+    }
+    if (word.favourite === true) {
+
+    }
+  });
+  res.redirect("/words");
+});
+
+
+
+
 module.exports = router;

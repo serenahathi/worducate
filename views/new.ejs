@@ -13,6 +13,36 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Worducate</a>
+      </div>
+      <a class="navbar-brand">
+      </a>
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/words">View words</a>
+        </li>
+        <li>
+          <a href="/words/new">Add word</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#">
+            <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="glyphicon glyphicon-log-in"></span> Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <h1>Add a new word</h1>
 
   <form action="/words" method="post">

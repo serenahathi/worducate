@@ -1,19 +1,19 @@
-var createError = require("http-errors");
-var express = require("express");
-var mongoose = require("mongoose");
-var passport = require("passport");
-var flash = require("flash");
-var db = require("./config/database.js");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var bodyParser = require("body-parser");
-var logger = require("morgan");
-var indexRouter = require("./routes/routes");
-var session = require("express-session");
+const createError = require("http-errors");
+const express = require("express");
+const mongoose = require("mongoose");
+const passport = require("passport");
+const flash = require("flash");
+const db = require("./config/database.js");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+const logger = require("morgan");
+const indexRouter = require("./routes/routes");
+const session = require("express-session");
 
 // require("./config/passport")(passport);
 
-var app = express();
+const app = express();
 require("dotenv").config();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({

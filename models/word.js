@@ -14,7 +14,7 @@ const WordSchema = new mongoose.Schema({
   creator: {
     type: Schema.ObjectId,
     ref: "User",
-    default: "API"
+    default: "APIadded"
   },
   definition: {
     type: String,

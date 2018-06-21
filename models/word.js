@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const WordSchema = new mongoose.Schema({
   word: {
@@ -9,6 +10,11 @@ const WordSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: new Date(new Date().setHours(1, 0, 0, 0))
+  },
+  creator: {
+    type: Schema.ObjectId,
+    ref: "User",
+    default: null
   },
   definition: {
     type: String,
@@ -27,7 +33,3 @@ const WordSchema = new mongoose.Schema({
 });
 
 let Word = module.exports = mongoose.model("Word", WordSchema);
-
-module.exports.getWords = function (callback) {
-  Word.find(callback);
-};

@@ -13,7 +13,8 @@ const WordSchema = new mongoose.Schema({
   },
   creator: {
     type: Schema.ObjectId,
-    ref: "User"
+    ref: "User",
+    default: "API"
   },
   definition: {
     type: String,

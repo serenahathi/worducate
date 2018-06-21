@@ -101,7 +101,7 @@ So that I can correctly add a new word to the vocabulary bank,
 I would like to be able to edit my entry in case I make a mistake
 ```
 
-V3
+V2
 
 ```
 As a user,

@@ -80,7 +80,6 @@ router.post("/words/:id", isLoggedIn, function (req, res) {
   res.redirect("/words");
 });
 
-
 router.post("/words/favourites", isLoggedIn, function (req, res) {
   let id = req.params.id;
   let words = {
@@ -95,27 +94,29 @@ router.post("/words/favourites", isLoggedIn, function (req, res) {
     if (err) {
       throw err;
     }
-    if (word.favourite === true) {
-
-    }
+    if (word.favourite === true) {}
   });
   res.redirect("/words");
 });
 
 // Sign up form
 router.get("/signup", function (req, res) {
-  res.render("signup", { message: req.flash("signupMessage")});
+  res.render("signup", {
+    message: req.flash("signupMessage")
+  });
 });
 
 router.post("/signup", passport.authenticate("local-signup", {
-  successRedirect: "/words",
+  successRedirect: "/",
   failureRedirect: "/signup",
   failureFlash: true
 }));
 
 // Log in form
 router.get("/login", function (req, res) {
-  res.render("login", {message: req.flash("loginMessage")});
+  res.render("login", {
+    message: req.flash("loginMessage")
+  });
 });
 
 router.post("/login", passport.authenticate("local-login", {
@@ -126,7 +127,7 @@ router.post("/login", passport.authenticate("local-login", {
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated())
-  return next;
+    return next;
   res.redirect("/")
 }
 

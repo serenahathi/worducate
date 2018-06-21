@@ -1,8 +1,8 @@
-let express = require("express");
-let router = express.Router();
-let getWord = require("../helpers/wordnik");
-let Word = require("../models/word");
-let passport = require("passport");
+const express = require("express");
+const router = express.Router();
+const getWord = require("../helpers/wordnik");
+const Word = require("../models/word");
+const passport = require("passport");
 require("../config/passport")(passport);
 
 // Retrieve and render WOTD
@@ -133,7 +133,7 @@ router.post("/login", passport.authenticate("local-login", {
 
 router.get("/logout", function (req, res) {
   req.logout();
-  res.redirect("/signup");
+  res.redirect("/login");
 });
 
 function isLoggedIn(req, res, next) {

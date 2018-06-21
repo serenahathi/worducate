@@ -33,10 +33,3 @@ const WordSchema = new mongoose.Schema({
 });
 
 let Word = module.exports = mongoose.model("Word", WordSchema);
-
-
-function getWords (callback) {
-  Word.find({$and: [{creator: req.user}, 
-    {creator: null}]}, callback);
-};
-

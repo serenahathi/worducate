@@ -91,20 +91,32 @@ I would like to view all the words that I have been shown so far
 
 ```
 As a user,
+So that I can keep track of other vocabulary I have learnt,
+I would like to add a new word to my vocabulary bank
+```
+
+```
+As a user,
+So that I can correctly add a new word to the vocabulary bank,
+I would like to be able to edit my entry in case I make a mistake
+```
+
+V3
+
+```
+As a user,
+So that I can review my words on any device and keep my words secure,
+I would like to be able to sign up for an account
+```
+
+```
+As a user,
 So that I can retrieve the words that I particularly like,
 I would like to be able to mark a word as a favourite and view all my favourite words
 ```
 
-V2
-
 ```
 As a user,
-So that I can keep track of vocabulary I have learnt using other resources,
-I would like to add a new word to the list & assign a category
-```
-
-```
-As a user,
-So that I can correctly add a new word to the list,
-I would like to be able to edit my entry in case I make a mistake
+So that I can review the different types of words I have learnt,
+I would like to be able to filter by category
 ```

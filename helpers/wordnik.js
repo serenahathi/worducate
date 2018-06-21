@@ -6,7 +6,6 @@ function getWord(callback) {
     let wordOfTheDay = {
       word: result.word,
       firstDefinition: result.definitions[0].text,
-      // secondDefinition: result.definitions[1].text,
       example: result.examples[0].text
     };
     callback(wordOfTheDay);

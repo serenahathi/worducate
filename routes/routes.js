@@ -9,7 +9,7 @@ require("../config/passport")(passport);
 router.get("/", function (req, res) {
   getWord(function (getWord) {
     let Wotd = new Word({
-      word: Math.random(),
+      word: getWord.word,
       createdAt: new Date(),
       definition: getWord.firstDefinition,
       usage: getWord.example,
@@ -21,7 +21,11 @@ router.get("/", function (req, res) {
 
 // Show all words for specific user
 router.get("/words", isLoggedIn, function (req, res) {
-  Word.find({creator: req.user}, function (err, words) {
+  Word.find({
+    $and: [
+      {$or: [{creator: null}, {creator: req.user}]}
+    ]
+  }, function (err, words) {
     if (err) {
       throw err;
     }
@@ -52,6 +56,7 @@ router.get("/words/new", isLoggedIn, function (req, res) {
 // Show form to edit word
 router.get("/words/:id/edit", isLoggedIn, function (req, res) {
   let id = req.params.id;
+  console.log(id);
   Word.findById(id, function (err, words) {
     if (err) {
       throw err;

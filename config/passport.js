@@ -9,6 +9,7 @@ module.exports = function (passport) {
 
   passport.deserializeUser(function (id, done) {
     User.findById(id, function (err, user) {
+      // console.log("deserialising user:".user)
       done(err, user);
     });
   });
@@ -31,8 +32,9 @@ module.exports = function (passport) {
           newUser.local.email = email;
           newUser.local.password = newUser.generateHash(password);
           newUser.save(function (err) {
-            if (err)
+            if (err) {
               throw err;
+            }
             return done(null, newUser);
           });
         }
@@ -48,10 +50,12 @@ module.exports = function (passport) {
     User.findOne({
       "local.email": email
     }, function (err, user) {
-      if (err)
+      if (err) {
         return done(err);
-      if (!user)
+      }
+      if (!user) {
         return done(null, false, req.flash("loginMessage", "No user found"));
+      }
       if (!user.validPassword(password))
         return done(null, false, req.flash("loginMessage", "Oops, wrong password!"));
       return done(null, user);

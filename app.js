@@ -56,7 +56,11 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-app.use(session({secret: "thisisatest"}));
+app.use(session({
+  secret: "thisisatest",
+  saveUninitialized: true,
+  resave: true
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());

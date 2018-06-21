@@ -131,6 +131,8 @@ router.get("/logout", function (req, res) {
 });
 
 function isLoggedIn(req, res, next) {
+  console.log(req);
+  console.log(req.isAuthenticated);
   if (req.isAuthenticated()) {
     return next();
   }

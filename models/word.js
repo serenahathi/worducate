@@ -14,7 +14,7 @@ const WordSchema = new mongoose.Schema({
   creator: {
     type: Schema.ObjectId,
     ref: "User",
-    default: "APIadded"
+    default: null
   },
   definition: {
     type: String,
@@ -34,6 +34,9 @@ const WordSchema = new mongoose.Schema({
 
 let Word = module.exports = mongoose.model("Word", WordSchema);
 
-module.exports.getWords = function (callback) {
-  Word.find(callback);
+
+function getWords (callback) {
+  Word.find({$and: [{creator: req.user}, 
+    {creator: null}]}, callback);
 };
+

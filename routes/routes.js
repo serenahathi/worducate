@@ -19,11 +19,9 @@ router.get("/", function (req, res) {
   });
 });
 
-// Show all words
+// Show all words for specific user
 router.get("/words", isLoggedIn, function (req, res) {
-  // console.log("hey")
-  // console.log(req.user._id)
-  Word.getWords(function (err, words) {
+  Word.find({creator: req.user}, function (err, words) {
     if (err) {
       throw err;
     }
@@ -31,7 +29,7 @@ router.get("/words", isLoggedIn, function (req, res) {
       words
     });
   });
-});
+});    
 
 // Add new word
 router.post("/words", isLoggedIn, function (req, res) {

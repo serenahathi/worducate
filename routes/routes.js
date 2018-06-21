@@ -21,6 +21,8 @@ router.get("/", function (req, res) {
 
 // Show all words
 router.get("/words", isLoggedIn, function (req, res) {
+  // console.log("hey")
+  // console.log(req.user._id)
   Word.getWords(function (err, words) {
     if (err) {
       throw err;
@@ -35,12 +37,13 @@ router.get("/words", isLoggedIn, function (req, res) {
 router.post("/words", isLoggedIn, function (req, res) {
   Word.create({
     word: req.body.newword,
+    creator: req.user,
     createdAt: new Date(),
     definition: req.body.definition,
     usage: req.body.usage,
     status: "User"
   });
-  res.redirect("/words");
+  res.redirect("/words", );
 });
 
 // Show form to add new word
@@ -131,8 +134,6 @@ router.get("/logout", function (req, res) {
 });
 
 function isLoggedIn(req, res, next) {
-  console.log(req);
-  console.log(req.isAuthenticated);
   if (req.isAuthenticated()) {
     return next();
   }

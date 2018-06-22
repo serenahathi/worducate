@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="/src/interface.js" type="text/javascript"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto:400,700i" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
@@ -62,8 +64,8 @@
                 <class="sub-heading">Usage:
                   <%= words[i].usage%>
                     <br>
-                    <a>
-                      <i onclick="loadDoc()" class="far fa-heart"></i>
+                    <a class="hearts">
+                      <i id="heart" class="far fa-heart"></i>
                     </a>
                     <% if (words[i].status === "User") { %>
                       <a href="words/<%=words[i]._id%>/edit" <i id="edit-pencil" class="fas fa-pencil-alt"></a>

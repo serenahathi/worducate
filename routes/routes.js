@@ -22,9 +22,13 @@ router.get("/", function (req, res) {
 // Show all words for specific user
 router.get("/words", isLoggedIn, function (req, res) {
   Word.find({
-    $and: [
-      {$or: [{creator: null}, {creator: req.user}]}
-    ]
+    $and: [{
+      $or: [{
+        creator: null
+      }, {
+        creator: req.user
+      }]
+    }]
   }, function (err, words) {
     if (err) {
       throw err;
@@ -33,7 +37,7 @@ router.get("/words", isLoggedIn, function (req, res) {
       words
     });
   });
-});    
+});
 
 // Add new word
 router.post("/words", isLoggedIn, function (req, res) {
@@ -86,24 +90,13 @@ router.post("/words/:id", isLoggedIn, function (req, res) {
   res.redirect("/words");
 });
 
-// router.post("/words/favourites", isLoggedIn, function (req, res) {
-//   let id = req.params.id;
-//   let words = {
-//     word: req.body.newword,
-//     createdAt: new Date(),
-//     definition: req.body.definition,
-//     usage: req.body.usage,
-//   };
-//   Word.findByIdAndUpdate(id, words, {
-//     new: true
-//   }, function (err) {
-//     if (err) {
-//       throw err;
-//     }
-//     if (word.favourite === true) {}
-//   });
-//   res.redirect("/words");
-// });
+router.post("/words/favourites/new", isLoggedIn, function (req, res) {
+  console.log("req.body is the data that comes from the AJAX request");
+  console.log(req.body);
+  // Update the database here by changing the status of the record from 'favourite: false'
+  // to 'favourite: true'
+  res.redirect("/words");
+});
 
 // Sign up form
 router.get("/signup", function (req, res) {

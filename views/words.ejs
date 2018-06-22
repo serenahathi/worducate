@@ -61,7 +61,8 @@
                 <br>
                 <class="sub-heading">Usage:
                   <%= words[i].usage%>
-
+                    <br>
+                    <i id="heart" class="far fa-heart"></i>
                     <% if (words[i].status === "User") { %>
                       <a href="words/<%=words[i]._id%>/edit" <i id="edit-pencil" class="fas fa-pencil-alt"></a>
                       </i>

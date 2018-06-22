@@ -56,14 +56,21 @@ a {
 }
 
 label {
-color: #446CB3; 
+  color: #446CB3;
 }
 
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
   outline: none;
 }
 
 input {
   background: white;
   padding: 5px;
+}
+
+#heart {
+  position: relative;
+  float: right;
+  padding-left: 20px;
 }

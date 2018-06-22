@@ -62,7 +62,9 @@
                 <class="sub-heading">Usage:
                   <%= words[i].usage%>
                     <br>
-                    <i id="heart" class="far fa-heart"></i>
+                    <a>
+                      <i onclick="loadDoc()" class="far fa-heart"></i>
+                    </a>
                     <% if (words[i].status === "User") { %>
                       <a href="words/<%=words[i]._id%>/edit" <i id="edit-pencil" class="fas fa-pencil-alt"></a>
                       </i>
@@ -73,5 +75,17 @@
         <div class="footer navbar-fixed-bottom">Made with &hearts; in Berlin</div>
   </div>
 </body>
+<!-- <script>
+  function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        document.getElementById("hi").innerHTML = "wasup"
+      }
+    };
+    xhttp.open("GET", "ajax_info.txt", true);
+    xhttp.send();
+  }
+</script> -->
 
 </html>

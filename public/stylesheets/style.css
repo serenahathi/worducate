@@ -69,8 +69,13 @@ input {
   padding: 5px;
 }
 
-#heart {
+.fa-heart {
   position: relative;
   float: right;
   padding-left: 20px;
+  outline: red;
+}
+
+.fa-heart:hover {
+  outline: red;
 }

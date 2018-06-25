@@ -63,18 +63,22 @@
           <br>
 
           <class="sub-heading">Definition:
-            <%= words[i].definition %>
-              <br>
-              <class="sub-heading">Usage:
+            <div class="definition">
+              <%= words[i].definition %>
+            </div>
+            <br>
+            <class="sub-heading">Usage:
+              <div class="usage">
                 <%= words[i].usage%>
-                  <br>
-                  <a class="hearts">
-                    <i id="heart" class="far fa-heart"></i>
-                  </a>
-                  <% if (words[i].status === "User") { %>
-                    <a href="words/<%=words[i]._id%>/edit" <i id="edit-pencil" class="fas fa-pencil-alt"></a>
-                    </i>
-                    <%}%>
+              </div>
+              <br>
+              <a class="hearts">
+                <i id="heart" class="far fa-heart"></i>
+              </a>
+              <% if (words[i].status === "User") { %>
+                <a href="words/<%=words[i]._id%>/edit" <i id="edit-pencil" class="fas fa-pencil-alt"></a>
+                </i>
+                <%}%>
       </div>
       <%}%>
 

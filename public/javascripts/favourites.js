@@ -3,13 +3,18 @@ window.onload = function () {
   wordBlocks.each(function () {
     let block = $(this);
     $(".hearts", block).on("click", function (e) {
-      alert("this is a fave");
       let word = $(".word", block);
+      let definition = $(".definition", block);
+      let usage = $(".usage", block);
       alert(word.text());
       $.ajax({
         url: "/words/favourites/new",
         type: "POST",
-        data: {},
+        data: {
+          word: word.text(),
+          definition: definition.text(),
+          usage: usage.text(),
+        },
         success: function (data) {
           alert(data);
         }

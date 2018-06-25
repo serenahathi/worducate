@@ -93,6 +93,9 @@ router.post("/words/:id", isLoggedIn, function (req, res) {
 router.post("/words/favourites/new", isLoggedIn, function (req, res) {
   console.log("req.body is the data that comes from the AJAX request");
   console.log(req.body);
+  let word = req.body.word.trim();
+  let definition = req.body.definition.trim();
+  let usage = req.body.usage.trim();
   // Update the database here by changing the status of the record from 'favourite: false'
   // to 'favourite: true'
   res.redirect("/words");

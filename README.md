@@ -120,3 +120,10 @@ As a user,
 So that I can review the different types of words I have learnt,
 I would like to be able to filter by category
 ```
+
+## Outstanding tasks
+
+- Increase test coverage
+- Complete final two user stories of V3
+- Refactor routes
+- Improve styling
